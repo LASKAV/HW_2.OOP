@@ -2,11 +2,11 @@
 #include <string>
 
 /*
-Создайте приложение «Телефонная книга». Необходимо хранить данные об абоненте (ФИО, домашний телефон,
-рабочий телефон, мобильный телефон, дополнительная информация о контакте) внутри соответствующего класса.
-Наполните класс переменными-членами, конструкторами, inline-функциями-членами, реализуйте деструктор.
-Обязательно необходимо выделять динамически память под ФИО. Предоставьте пользователю возможность добавлять
-новых абонентов, удалять абонентов, искать абонентов по ФИО, показывать всех абонентов
+РЎРѕР·РґР°Р№С‚Рµ РїСЂРёР»РѕР¶РµРЅРёРµ В«РўРµР»РµС„РѕРЅРЅР°СЏ РєРЅРёРіР°В». РќРµРѕР±С…РѕРґРёРјРѕ С…СЂР°РЅРёС‚СЊ РґР°РЅРЅС‹Рµ РѕР± Р°Р±РѕРЅРµРЅС‚Рµ (Р¤РРћ, РґРѕРјР°С€РЅРёР№ С‚РµР»РµС„РѕРЅ,
+СЂР°Р±РѕС‡РёР№ С‚РµР»РµС„РѕРЅ, РјРѕР±РёР»СЊРЅС‹Р№ С‚РµР»РµС„РѕРЅ, РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РєРѕРЅС‚Р°РєС‚Рµ) РІРЅСѓС‚СЂРё СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРіРѕ РєР»Р°СЃСЃР°.
+РќР°РїРѕР»РЅРёС‚Рµ РєР»Р°СЃСЃ РїРµСЂРµРјРµРЅРЅС‹РјРё-С‡Р»РµРЅР°РјРё, РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°РјРё, inline-С„СѓРЅРєС†РёСЏРјРё-С‡Р»РµРЅР°РјРё, СЂРµР°Р»РёР·СѓР№С‚Рµ РґРµСЃС‚СЂСѓРєС‚РѕСЂ.
+РћР±СЏР·Р°С‚РµР»СЊРЅРѕ РЅРµРѕР±С…РѕРґРёРјРѕ РІС‹РґРµР»СЏС‚СЊ РґРёРЅР°РјРёС‡РµСЃРєРё РїР°РјСЏС‚СЊ РїРѕРґ Р¤РРћ. РџСЂРµРґРѕСЃС‚Р°РІСЊС‚Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РґРѕР±Р°РІР»СЏС‚СЊ
+РЅРѕРІС‹С… Р°Р±РѕРЅРµРЅС‚РѕРІ, СѓРґР°Р»СЏС‚СЊ Р°Р±РѕРЅРµРЅС‚РѕРІ, РёСЃРєР°С‚СЊ Р°Р±РѕРЅРµРЅС‚РѕРІ РїРѕ Р¤РРћ, РїРѕРєР°Р·С‹РІР°С‚СЊ РІСЃРµС… Р°Р±РѕРЅРµРЅС‚РѕРІ
 */
 
 const size_t BUFFER = 100;
@@ -30,7 +30,7 @@ public:
 		Notes = nullptr;
 		number = 0;
 	}
-	Phonebook (const char* Data_FIO, const char* Data_Home_phone, const char* Data_Work_phone, const char* Data_Phone, const char* Data_Notes) // Конструктор выдeление динамической памяти
+	Phonebook (const char* Data_FIO, const char* Data_Home_phone, const char* Data_Work_phone, const char* Data_Phone, const char* Data_Notes) // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РІС‹РґeР»РµРЅРёРµ РґРёРЅР°РјРёС‡РµСЃРєРѕР№ РїР°РјСЏС‚Рё
 	{
 
 		FIO = new char[strlen(Data_FIO) + 1];          
@@ -76,7 +76,7 @@ public:
 
 };
 
-// Нужно написать функцию которая будет добавлять аккаунты 
+// РќСѓР¶РЅРѕ РЅР°РїРёСЃР°С‚СЊ С„СѓРЅРєС†РёСЋ РєРѕС‚РѕСЂР°СЏ Р±СѓРґРµС‚ РґРѕР±Р°РІР»СЏС‚СЊ Р°РєРєР°СѓРЅС‚С‹ 
 
 void Add_accounts(Phonebook*& subscriber,int& Contact, int& Number_sub)
 {
@@ -107,7 +107,7 @@ void Add_accounts(Phonebook*& subscriber,int& Contact, int& Number_sub)
 	char enter_b[BUFFER];
 
 	std::cout << "FIO: ";
-	std::cin.ignore();  // выдает ошибку если не ignore
+	std::cin.ignore();  // РІС‹РґР°РµС‚ РѕС€РёР±РєСѓ РµСЃР»Рё РЅРµ ignore
 	std::cin.getline(enter_b, BUFFER);
 	sub_buff[Contact].FIO = new char[strlen(enter_b) + 1];
 	strcpy_s(sub_buff[Contact].FIO, strlen(enter_b) + 1, enter_b);
@@ -146,7 +146,7 @@ void Add_accounts(Phonebook*& subscriber,int& Contact, int& Number_sub)
 
 }
 
-void Show_contact(Phonebook*& subscriber, int& Contact)  // показывать всех абонентов
+void Show_contact(Phonebook*& subscriber, int& Contact)  // РїРѕРєР°Р·С‹РІР°С‚СЊ РІСЃРµС… Р°Р±РѕРЅРµРЅС‚РѕРІ
 {
 	
 	for (int i = 0; i < Contact; i++)
@@ -156,11 +156,11 @@ void Show_contact(Phonebook*& subscriber, int& Contact)  // показывать всех абон
 	}
 }
 
-void Delete_contact(Phonebook*& subscriber, int& Contact, int& Number_sub)  // удалять абонентов
+void Delete_contact(Phonebook*& subscriber, int& Contact, int& Number_sub)  // СѓРґР°Р»СЏС‚СЊ Р°Р±РѕРЅРµРЅС‚РѕРІ
 {
 	short del_numb;
 	bool flag = 0;
-	std::cout << "Введите номер для удаления: ";
+	std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ: ";
 	std::cin >> del_numb;
 
 	for (int i = 0; i < Contact; i++)
@@ -209,19 +209,19 @@ void Delete_contact(Phonebook*& subscriber, int& Contact, int& Number_sub)  // у
 
 	if (flag)
 	{
-		std::cout << "\nАбонент добавлен!" << std::endl;
+		std::cout << "\nРђР±РѕРЅРµРЅС‚ РґРѕР±Р°РІР»РµРЅ!" << std::endl;
 	}
 	else
 	{
-		std::cout << "Контакт не найден!\n";
+		std::cout << "РљРѕРЅС‚Р°РєС‚ РЅРµ РЅР°Р№РґРµРЅ!\n";
 		return;
 	}
 }
 
-void Search_subscribers(Phonebook*& subscriber, int& Contact)  // искать абонентов по ФИО
+void Search_subscribers(Phonebook*& subscriber, int& Contact)  // РёСЃРєР°С‚СЊ Р°Р±РѕРЅРµРЅС‚РѕРІ РїРѕ Р¤РРћ
 {
 	int flag = 0;
-	std::cout << "Введите имя для поиска: ";
+	std::cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ РґР»СЏ РїРѕРёСЃРєР°: ";
 	char Search_Sub [BUFFER];
 	std::cin.getline(Search_Sub, BUFFER);
 
@@ -234,49 +234,49 @@ void Search_subscribers(Phonebook*& subscriber, int& Contact)  // искать абонент
 			flag = 1;
 		}
 	}
-	if (flag == 0) std::cout << " Контакт не найден!\n";
+	if (flag == 0) std::cout << " РљРѕРЅС‚Р°РєС‚ РЅРµ РЅР°Р№РґРµРЅ!\n";
 }
 
 int main()
 {
-	setlocale(LC_ALL, "ru");  // Подключем язык 
+	setlocale(LC_ALL, "ru");  // РџРѕРґРєР»СЋС‡РµРј СЏР·С‹Рє 
 
-	int Contact = 0;     // Абонентов в книге
-	int Number_sub = 1;  // Номер абанента в книге 
+	int Contact = 0;     // РђР±РѕРЅРµРЅС‚РѕРІ РІ РєРЅРёРіРµ
+	int Number_sub = 1;  // РќРѕРјРµСЂ Р°Р±Р°РЅРµРЅС‚Р° РІ РєРЅРёРіРµ 
 
-	Phonebook* subscriber = new Phonebook[Contact]; // Массив класса абонента 
+	Phonebook* subscriber = new Phonebook[Contact]; // РњР°СЃСЃРёРІ РєР»Р°СЃСЃР° Р°Р±РѕРЅРµРЅС‚Р° 
 
 	short batton_menu = 0;
 	
 	do 
 	{
 		std::cout << "___Phonebook___" << std::endl
-			<< "\n1.Добавить абонента" << std::endl
-			<< "2.Удалить абонента" << std::endl
-			<< "3.Поиск абонента по ФИО" << std::endl
-			<< "4.Показать всех абонентов" << std::endl
-			<< "5.Выход" << std::endl;
+			<< "\n1.Р”РѕР±Р°РІРёС‚СЊ Р°Р±РѕРЅРµРЅС‚Р°" << std::endl
+			<< "2.РЈРґР°Р»РёС‚СЊ Р°Р±РѕРЅРµРЅС‚Р°" << std::endl
+			<< "3.РџРѕРёСЃРє Р°Р±РѕРЅРµРЅС‚Р° РїРѕ Р¤РРћ" << std::endl
+			<< "4.РџРѕРєР°Р·Р°С‚СЊ РІСЃРµС… Р°Р±РѕРЅРµРЅС‚РѕРІ" << std::endl
+			<< "5.Р’С‹С…РѕРґ" << std::endl;
 
 		std::cout << "\nTerminal : ";
 		std::cin >> batton_menu;
 
 		switch (batton_menu)
 		{
-		case 1:  // Добавить абонента
+		case 1:  // Р”РѕР±Р°РІРёС‚СЊ Р°Р±РѕРЅРµРЅС‚Р°
 		{
 			system("cls");
-			std::cout << "Добавление абонента" << std::endl;
+			std::cout << "Р”РѕР±Р°РІР»РµРЅРёРµ Р°Р±РѕРЅРµРЅС‚Р°" << std::endl;
 			Add_accounts(subscriber, Contact, Number_sub);
-			std::cout << "\nАбонент добавлен!" << std::endl;
+			std::cout << "\nРђР±РѕРЅРµРЅС‚ РґРѕР±Р°РІР»РµРЅ!" << std::endl;
 			system("pause");
 			system("cls");
 			break;
 		}
-		case 2:  // Удалить абонента
+		case 2:  // РЈРґР°Р»РёС‚СЊ Р°Р±РѕРЅРµРЅС‚Р°
 		{
 			system("cls");
 			Delete_contact(subscriber, Contact, Number_sub);
-			std::cout << "\nАбонент удален!" << std::endl;
+			std::cout << "\nРђР±РѕРЅРµРЅС‚ СѓРґР°Р»РµРЅ!" << std::endl;
 			system("pause");
 			system("cls");
 			break;
@@ -289,14 +289,14 @@ int main()
 			system("cls");
 			break;
 		}
-		case 4:  // Показать всех абонентов
+		case 4:  // РџРѕРєР°Р·Р°С‚СЊ РІСЃРµС… Р°Р±РѕРЅРµРЅС‚РѕРІ
 		{
 			system("cls");
 			Show_contact(subscriber, Contact);
 			system("pause");
 			system("cls");
 		}break;
-		case 5:  // Выход
+		case 5:  // Р’С‹С…РѕРґ
 		{
 			system("pause");
 			return -1;
